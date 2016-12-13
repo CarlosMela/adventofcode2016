@@ -20,12 +20,12 @@
          steps (:n x)]
    (hash-map :x (+ (prev :x) (* (first nd) steps )) :y (+ (prev :y) (* (second nd) steps )) :dir nd)))
 
-;; solution part 1
-(distancia  (reduce move origin instructions))
-
 
 (defn distancia [{:keys [x y]}]
   (+ (Math/abs x) (Math/abs y)))
+
+;; solution part 1
+(distancia  (reduce move origin instructions))
 
 (defn break [big]
   (loop [path big todos []]
